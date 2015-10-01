@@ -1,2 +1,2 @@
-# home
-/home
+# /home
+no place like /home
