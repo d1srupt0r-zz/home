@@ -111,7 +111,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Network usage widget
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, '<span color="#fff">${enp0s3 down_kb}</span> <span color="#fff">${enp0s3 up_kb}</span>', 3)
+vicious.register(netwidget, vicious.widgets.net, '<span color="#fff">${enp0s18 down_kb}</span> <span color="#fff">${enp0s18 up_kb}</span>', 3)
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
@@ -357,7 +357,8 @@ root.keys(globalkeys)
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
-      properties = { border_width = beautiful.border_width,
+      properties = { size_hints_honor = false,
+					 border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
