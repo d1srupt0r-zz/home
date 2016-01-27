@@ -42,7 +42,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 --beautiful.init("/usr/share/awesome/themes/default/theme.lua")
-beautiful.init("~/.config/awesome/themes/skyd/theme.lua")
+beautiful.init("~/.config/awesome/themes/flockd/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
@@ -80,10 +80,13 @@ end
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = { names = { "one", "two", "three", "four", "five" } }
+tags = { 
+	names  = { "one", "two", "three" },
+	layout = { layouts[6], layouts[7], layouts[7] }
+}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag(tags.names, s)
+    tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 -- }}}
 
@@ -111,7 +114,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Network usage widget
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, '<span color="#fff">${enp0s18 down_kb}</span> <span color="#fff">${enp0s18 up_kb}</span>', 3)
+vicious.register(netwidget, vicious.widgets.net, '<span color="#fff">${wlp4s0 down_kb}</span> <span color="#fff">${wlp4s0 up_kb}</span>', 3)
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
