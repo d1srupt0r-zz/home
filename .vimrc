@@ -1,4 +1,4 @@
-colorscheme github
+#colorscheme github
 
 syntax on
 syntax enable
