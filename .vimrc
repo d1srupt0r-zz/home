@@ -1,4 +1,4 @@
-"colorscheme github
+colorscheme monokai
 
 syntax on
 syntax enable
